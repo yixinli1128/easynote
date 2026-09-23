@@ -1,14 +1,14 @@
-import { createRouter, createWebHistory } from "vue-router";
-import App from "../App.vue";
-import NoteGrid from "../components/NoteGrid.vue";
-import AddNote from "../components/AddNote.vue";
-
+import { createRouter, createWebHistory } from 'vue-router';
+import NoteGrid from '../components/NoteGrid.vue';
+import AddNote from '../components/AddNote.vue';
+import EditNote from '../components/EditNote.vue';
+import SearchNote from '../components/SearchNote.vue';
 const routes = [
-  { path: "/", name: "home", component: NoteGrid },
-  { path: "/NoteGrid", name: "NoteGrid", component: NoteGrid },
-  { path: "/AddNote", name: "AddNote", component: AddNote },
+  { path: '/', name: 'home', component: NoteGrid },
+  { path: '/add_note', name: 'add_note', component: AddNote },
+  { path: '/edit_note/:id', name: 'editNote', component: EditNote },
+  { path: '/search', name: 'search', component: SearchNote },
 ];
-
 const router = createRouter({
   routes,
   history: createWebHistory(),

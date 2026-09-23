@@ -4,10 +4,10 @@ const todoStore = useTodoStore();
 </script>
 <template lang="">
   <div class="container pt-5">
+    <h3 class="mb-3">搜尋結果:{{ todoStore.keyword }}</h3>
     <div class="row">
-      <div class="col-4 mb-3" v-for="note in todoStore.notes">
-        <router-link :to="{ name:'editNote', params: { id: note.id } }"
-          >
+      <div class="col-4 mb-3" v-for="note in todoStore.searchResults">
+        <router-link :to="{ name: 'editNote', params: { id: note.id } }">
           <div class="card">
             <i class="fa-solid fa-thumbtack me-2 pinned" v-if="note.isPinned"></i>
             <i class="fa-solid fa-thumbtack me-2" v-else></i>
